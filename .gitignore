@@ -1,3 +1,4 @@
+####### nestjs
 # compiled output
 /backend/dist
 /backend/node_modules
@@ -13,46 +14,84 @@
 /backend/lerna-debug.log*
 
 # OS
-.DS_Store
+/backend/.DS_Store
 
 # Tests
 /backend/coverage
 /backend/.nyc_output
 
 # IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+/backend/.idea
+/backend/.project
+/backend/.classpath
+/backend/.c9/
+/backend/*.launch
+/backend/.settings/
+/backend/*.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
+/backend/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
 # dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+/backend/.env
+/backend/.env.development.local
+/backend/.env.test.local
+/backend/.env.production.local
+/backend/.env.local
 
 # temp directory
-.temp
-.tmp
+/backend/.temp
+/backend/.tmp
 
 # Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+/backend/pids
+/backend/*.pid
+/backend/*.seed
+/backend/*.pid.lock
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+/backend/report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-/backend/.readme.md
+####### nextjs
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# dependencies
+/frontend/node_modules
+/frontend/.pnp
+/frontend/.pnp.js
+/frontend/.yarn/install-state.gz
+
+# testing
+/frontend/coverage
+
+# next.js
+/frontend/.next/
+/frontend/out/
+
+# production
+/build
+
+# misc
+/frontend/.DS_Store
+/frontend/*.pem
+
+# debug
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# local env files
+/frontend/.env*.local
+
+# vercel
+/frontend/.vercel
+
+# typescript
+/frontend/*.tsbuildinfo
+/frontend/next-env.d.ts
+
+####### common
+.readme.md
