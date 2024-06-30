@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./
+      dockerfile: ./backend/dockerfile.dev
+    ports:
+      - "5000:5000"
+    command: npm run start:dev
