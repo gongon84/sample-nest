@@ -7,11 +7,21 @@ services:
     ports:
       - "5000:5000"
     command: npm run start:dev
+    networks:
+      - nestApp
   
   frontend:
     build:
       context: ./
       dockerfile: ./frontend/dockerfile.dev
+    volumes:
+      - ./frontend:/app
     ports:
       - "3000:3000"
     command: npm run dev
+    networks:
+      - nestApp
+
+networks:
+  nestApp:
+    driver: bridge
