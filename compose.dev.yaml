@@ -4,6 +4,8 @@ services:
     build:
       context: ./
       dockerfile: ./backend/dockerfile.dev
+    volumes:
+      - ./backend:/usr/src/app
     ports:
       - "5000:5000"
     command: npm run start:dev
@@ -19,6 +21,8 @@ services:
     ports:
       - "3000:3000"
     command: npm run dev
+    depends_on:
+      - backend
     networks:
       - nestApp
 
