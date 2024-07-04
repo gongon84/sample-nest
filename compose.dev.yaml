@@ -1,5 +1,18 @@
 version: '3.8'
 services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nestApp
+
   backend:
     build:
       context: ./
@@ -9,6 +22,8 @@ services:
     ports:
       - "5000:5000"
     command: npm run start:dev
+    depends_on:
+      - postgres
     networks:
       - nestApp
   
@@ -25,6 +40,10 @@ services:
       - backend
     networks:
       - nestApp
+
+
+volumes:
+  postgres_data:
 
 networks:
   nestApp:
