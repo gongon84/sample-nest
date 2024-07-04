@@ -1,7 +1,7 @@
 .PHONY: build up down
 
 build:
-	docker compose -f compose.dev.yaml build --progress=plain
+	docker compose -f compose.dev.yaml build
 
 up:
 	docker compose -f compose.dev.yaml up
