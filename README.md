@@ -1,0 +1,11 @@
+### 技術スタック
+- Backend
+    - NestJS
+    - Prisma
+    - PostgreSQL
+- Frontend
+    - NextJS / React
+- Admin
+    - Refine
+- Other
+    - npm workspace
