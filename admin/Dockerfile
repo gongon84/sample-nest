@@ -5,7 +5,7 @@ FROM refinedev/node:18 AS base
 
 FROM base as deps
 
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
+COPY ./admin/package.json ./admin/yarn.lock* ./admin/package-lock.json* ./admin/pnpm-lock.yaml* ./admin/.npmrc* ./
 
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
@@ -20,7 +20,7 @@ ENV NODE_ENV production
 
 COPY --from=deps /app/refine/node_modules ./node_modules
 
-COPY . .
+COPY ./admin .
 
 RUN npm run build
 
