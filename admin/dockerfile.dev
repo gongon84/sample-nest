@@ -1,0 +1,14 @@
+FROM refinedev/node:18
+
+EXPOSE 5173
+
+WORKDIR /app/refine
+
+ENV NODE_ENV development
+
+COPY ./admin/package.json ./admin/package-lock.json* ./
+
+RUN npm install
+
+COPY ./admin .
+
