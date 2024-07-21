@@ -42,6 +42,18 @@ services:
     networks:
       - nestApp
 
+  admin:
+    build:
+      context: ./
+      dockerfile: ./admin/dockerfile.dev
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    command: npm run dev
+    networks:
+      - nestApp
+
 
 volumes:
   postgres_data:
