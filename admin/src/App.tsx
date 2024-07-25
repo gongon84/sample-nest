@@ -23,6 +23,7 @@ import { ColorModeContextProvider } from "./contexts/color-mode";
 import {
   InitTestList,
   InitTestCreate,
+  InitTestEdit,
 } from "./pages/init-test";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
                     name: "init_test",
                     list: "/init-test",
                     create: "/init-test/create",
+                    edit: "/init-test/edit/:id",
                     meta: {
                       canDelete: true,
                     },
@@ -74,6 +76,7 @@ function App() {
                     <Route path="/init-test">
                       <Route index element={<InitTestList />} />
                       <Route path="create" element={<InitTestCreate />} />
+                      <Route path="edit/:id" element={<InitTestEdit />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>

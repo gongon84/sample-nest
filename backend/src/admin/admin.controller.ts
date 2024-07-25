@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Delete, Body, Param } from '@nestjs/common';
 import { AdminService } from './admin.service';
 import { CreateInitTestDto } from './dto/create-init-test.dto';
+import { UpdateInitTestDto } from './dto/update-init-test.dto';
 
 @Controller('admin')
 export class AdminController {
@@ -14,5 +15,20 @@ export class AdminController {
     @Post('init_test')
     create(@Body() createInitTestDto: CreateInitTestDto) {
         return this.adminService.create(createInitTestDto);
+    }
+
+    @Get('init_test/:id')
+    getInitTestById(@Param('id') id: string) {
+        return this.adminService.getInitTestById(id);
+    }
+
+    @Patch('init_test/:id')
+    update(@Param('id') id: string, @Body() updateInitTestDto: UpdateInitTestDto) {
+        return this.adminService.update(id, updateInitTestDto);
+    }
+
+    @Delete('init_test/:id')
+    remove(@Param('id') id: string) {
+        return this.adminService.remove(id);
     }
 }
