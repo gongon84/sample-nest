@@ -106,7 +106,6 @@
 /admin/yarn-error.log*
 /admin/pnpm-debug.log*
 /admin/lerna-debug.log*
-/admin/
 /admin/node_modules
 /admin/dist
 /admin/dist-ssr

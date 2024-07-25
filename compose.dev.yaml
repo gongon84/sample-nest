@@ -48,6 +48,8 @@ services:
       dockerfile: ./admin/dockerfile.dev
     ports:
       - "5173:5173"
+    volumes:
+      - ./admin/src:/app/refine/src
     depends_on:
       - backend
     command: npm run dev
